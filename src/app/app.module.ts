@@ -19,6 +19,8 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { LocationStrategy } from '@angular/common';
+import { HashLocationStrategy } from '@angular/common';
 
 
 const routes: Routes = [
@@ -75,7 +77,12 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     NgbModule.forRoot(),
   ],
-  providers: [CountriesService],
+  providers: [CountriesService,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
