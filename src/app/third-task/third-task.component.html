@@ -1,0 +1,21 @@
+<div class="container">
+
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>
+        <h1 class="mat-title">
+          This is an image of grumpy cat!
+        </h1>
+      </mat-card-title>
+      <mat-card-subtitle>World's most famous cat</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="base64Image" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        More specifically, this is a base64 encoded image of grumpy cat.
+        <br> Base64 is basically a way to 'format' (encode) binary data in ASCII string format.
+        <br> This way, binary data can be easily stored or transfered without unexpected changes.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

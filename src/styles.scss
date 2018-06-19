@@ -1,0 +1,18 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+    padding-top: 90px;
+    font-family: Elena;
+}
+.pointer{
+    cursor: pointer;
+}
+a {
+    color: black;
+}
+$secondary: #cfebd5;
+
+.jumbotron {
+    background-color: $secondary;
+}
