@@ -2,7 +2,7 @@
 
 @include mat-core();
 
-$rg-primary: mat-palette($mat-light-blue, 400);
+$rg-primary: mat-palette($mat-light-blue, 200);
 $rg-accent: mat-palette($mat-blue-grey, A100, A400, A700);
 $rg-warn: mat-palette($mat-red, 200);
 $rg-theme: mat-light-theme($rg-primary, $rg-accent, $rg-warn);
