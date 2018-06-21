@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="jumbotron mat-display-1">
-    <h1 class="mat-display-1">
-      An accordion of countries! click on a country to reveal the list of cities..
+  <div class="heading">
+    <h1 class="mat-subheading text-center">
+      An accordion of countries! click on a country to reveal the list of cities
     </h1>
   </div>
   <mat-accordion>
@@ -19,6 +19,31 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div *ngFor="let city of location.cities" class="text-center">
+        <mat-action-row style="justify-content: left">
+          {{city}}
+        </mat-action-row>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<div class="container">
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor='let country of countries; index as i'>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+
+        </mat-panel-title>
+        <mat-panel-description>
+          <h2>
+            <small>
+              {{country}}
+            </small>
+          </h2>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngFor="let city of test[i].cities" class="text-center">
         <mat-action-row style="justify-content: left">
           {{city}}
         </mat-action-row>

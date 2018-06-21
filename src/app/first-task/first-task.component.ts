@@ -30,6 +30,7 @@ export class FirstTaskComponent implements OnInit {
     })
   }
   //returns image for current ngfor index
+  //hard coded to go to search carousel folder and search for an image between 0-4 based on the amount of tasks.
   getImage(i) {
     return `../../assets/carousel/${i}.jpeg`
   }

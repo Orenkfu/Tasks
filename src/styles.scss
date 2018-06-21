@@ -1,5 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "./material.scss";
+/*
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+*/
 
 body {
     padding-top: 90px;
@@ -11,8 +14,4 @@ body {
 a {
     color: black;
 }
-$secondary: #cfebd5;
-
-.jumbotron {
-    background-color: $secondary;
-}
+$secondary: #b3ebbf;

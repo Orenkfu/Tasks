@@ -1,0 +1,29 @@
+@import "~@angular/material/_theming";
+
+@include mat-core();
+
+$rg-primary: mat-palette($mat-light-blue, 400);
+$rg-accent: mat-palette($mat-blue-grey, A100, A400, A700);
+$rg-warn: mat-palette($mat-red, 200);
+$rg-theme: mat-light-theme($rg-primary, $rg-accent, $rg-warn);
+@include angular-material-theme($rg-theme);
+
+.jumbotron {
+    background-color: mat-color($rg-accent);
+}
+
+a {
+    color: black;
+}
+.card{
+   background-color: mat-color($rg-accent);
+}
+a:hover {
+    color: mat-color($rg-accent)
+}
+.heading {
+   color: mat-color($rg-accent);
+    text-shadow: 1px 1px black;
+    padding: 5%;
+    margin: 5%;
+}

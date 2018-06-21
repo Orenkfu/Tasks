@@ -1,4 +1,3 @@
-import { map } from 'rxjs/operators';
 import { Location } from './../models/location';
 import { CountriesService } from './../services/countries.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,46 +8,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./second-task.component.css']
 })
 export class SecondTaskComponent implements OnInit {
-  locations;
+  locations = [];
+
   constructor(private countriesService: CountriesService) {
   }
 
   getAllCountries(): any {
-    this.countriesService.get().subscribe(resp => {
-      var countries = {};
-      for (const i in resp) {
-        const elem = resp[i];
-        const key = elem.country;
-        let cities = countries[key];
-        //initialize null cities
-        if (cities == null) {
-          cities = [];
-          //and push the city
-          cities.push(elem.city);
-          countries[key] = cities; // Construct dynamic object
+    this.countriesService.get().subscribe(input => {
+      /*
+      In an actual project this code should be extracted to an external function to be reusable, testable, and maintainable.
+      I highly suspect there is a more performant way to implement this logic, but within the timeframe I focused on keeping it concise and readable.
+      */
+      const result = input.reduce((accum: Location[], current: { country: string, city: string }, index) => {
+        //occurs once: accum starts as {}
+        if (!(accum instanceof Array)) {
+          accum = [{ country: current.country, cities: [current.city] }];
         }
-        else {
-          cities = countries[key];
-          if (!cities.includes(elem.city))
-            cities.push(elem.city);
-        }
-      }
-      const cities = Object.values(countries);
-      const countriesKeys = Object.keys(countries);
-      console.log('values', cities);
-      console.log('keys', countriesKeys);
-      this.locations = [];
-      for (let index = 0; index < countriesKeys.length; index++) {
-        const country = countriesKeys[index];
-        const city = cities[index];
-        this.locations.push({ country: country, cities: city });
-      }
-      console.log('finalcountries', this.locations)
+        //checks for duplicate on the country property of accum array
+        if (!(accum.find((location) => location.country == input[index].country))) {
+          accum.push({ country: current.country, cities: [current.city] });
+        } else {
+          const country = accum.find((location) => location.country == input[index].country)
+          //checks for duplicate on the cities array of current country
+          if (!country.cities.includes(current.city)) {
+            const i = accum.indexOf(country);
+            accum[i].cities.push(current.city);
+          }
+        } return accum;
+      });
+      this.locations = result;
 
-    })
-  }
-  log() {
-    console.log(this.locations);
+    });
   }
 
   ngOnInit() {

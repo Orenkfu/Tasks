@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { MatRadioModule } from '@angular/material/radio';
 import { AppComponent } from './app.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { LocationStrategy } from '@angular/common';
 import { HashLocationStrategy } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 
 const routes: Routes = [
@@ -64,6 +64,7 @@ const routes: Routes = [
     FifthTaskComponent,
     SummaryPipe,
 
+
   ],
   imports: [
     BrowserModule,
@@ -71,6 +72,7 @@ const routes: Routes = [
     MatExpansionModule,
     MatCardModule,
     MatToolbarModule,
+    MatIconModule,
 
     BrowserAnimationsModule,
 
