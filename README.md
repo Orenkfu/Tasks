@@ -1,27 +1,22 @@
 # RazorGripProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
+This project was built using Angular6, Angular Materials, And Bootstrap
 
-## Development server
+## Run
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone the repo and run 'npm install' to install dependencies.
 
-## Code scaffolding
+Then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Issues
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Task 2: I am certain a better performant implementation is possible. I put most of my effort implementing this logic in a concise and readable way, the javascript style.
 
-## Running end-to-end tests
+## Contact
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+App was developed by Oren Carmel, orenkfu@gmail.com
